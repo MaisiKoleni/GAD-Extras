@@ -1,5 +1,14 @@
 import java.util.Arrays;
 
+/**
+ * Öffentliche Testfälle von Christian Femers.
+ * Siehe https://github.com/MaisiKoleni/GAD-Extras
+ * 
+ * Bitte nicht mit abgeben. (geht sonst nicht)
+ * 
+ * @author Christian Femers (IN.TUM)
+ *
+ */
 public class BinSeaTests {
 	
 	static {
@@ -10,16 +19,25 @@ public class BinSeaTests {
 		test();
 	}
 
+	/**
+	 * Hilfsmethode, die wie ein Aufruf von BinSea.search(sortedData,value,true) funktioniert.
+	 */
 	private static int searchLower(int[] sortedData, int value) {
 		Interval i = BinSea.search(sortedData, Interval.fromArrayIndices(value, Integer.MAX_VALUE));
 		return i instanceof EmptyInterval ? -1 : i.getFrom();
 	}
 
+	/**
+	 * Hilfsmethode, die wie ein Aufruf von BinSea.search(sortedData,value,false) funktioniert.
+	 */
 	private static int searchHigher(int[] sortedData, int value) {
 		Interval i = BinSea.search(sortedData, Interval.fromArrayIndices(0, value));
 		return i instanceof EmptyInterval ? -1 : i.getTo();
 	}
 
+	/**
+	 * Haupt-Testmethode
+	 */
 	public static void test() {
 		System.out.println("EMPTY");
 		assertEquals(searchLower(new int[] {}, 5), -1);
@@ -167,6 +185,10 @@ public class BinSeaTests {
 		assertEquals(searchLower(a, 968_686_425), Arrays.binarySearch(a, 968_686_425));
 	}
 	
+	/**
+	 * Generiert irgendeine Sequenz, die streng monoton steigt und somit für bin_search.
+	 * Bei size >= 22_139_005 entstehen Overflows, d.h. Zahlen werden plötzlich negativ.
+	 */
 	private static int[] gen(int size) {
 		int[] a = new int[size];
 		a[0] = 1;
@@ -177,6 +199,9 @@ public class BinSeaTests {
 		return a;
 	}
 
+	/**
+	 * Simple assert-Methode zum vergleichen von ints.
+	 */
 	private static void assertEquals(int actual, int expected) {
 		if (actual == expected)
 			System.out.format("  passed, result: %d\n", actual);
