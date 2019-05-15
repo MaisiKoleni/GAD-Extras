@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 /**
- * Öffentliche Testfälle von Christian Femers.
+ * Öffentliche Testfälle von Christian Femers. 
  * Siehe https://github.com/MaisiKoleni/GAD-Extras
  * 
  * Bitte nicht mit abgeben. (geht sonst nicht)
@@ -10,7 +10,7 @@ import java.util.Arrays;
  *
  */
 public class BinSeaTests {
-	
+
 	static {
 		System.err.println("CF's TESTS ACTIVE\n");
 	}
@@ -20,7 +20,7 @@ public class BinSeaTests {
 	}
 
 	/**
-	 * Hilfsmethode, die wie ein Aufruf von BinSea.search(sortedData,value,true) funktioniert.
+	 * Hilfsmethode, die fast wie ein Aufruf von BinSea.search(sortedData,value,true) funktioniert.
 	 */
 	private static int searchLower(int[] sortedData, int value) {
 		Interval i = BinSea.search(sortedData, Interval.fromArrayIndices(value, Integer.MAX_VALUE));
@@ -28,7 +28,7 @@ public class BinSeaTests {
 	}
 
 	/**
-	 * Hilfsmethode, die wie ein Aufruf von BinSea.search(sortedData,value,false) funktioniert.
+	 * Hilfsmethode, die fast wie ein Aufruf von BinSea.search(sortedData,value,false) funktioniert.
 	 */
 	private static int searchHigher(int[] sortedData, int value) {
 		Interval i = BinSea.search(sortedData, Interval.fromArrayIndices(0, value));
@@ -174,7 +174,7 @@ public class BinSeaTests {
 		assertEquals(searchHigher(new int[] { 1, 2, 5, 5, 5, 5, 7, 8 }, 5), 2);
 		assertEquals(searchHigher(new int[] { 1, 5, 5, 5, 5, 5, 5, 8 }, 5), 1);
 		assertEquals(searchHigher(new int[] { 5, 5, 5, 5, 5, 5, 5, 5 }, 5), 0);
-		
+
 		System.out.println("HIGHER/LOWER - 10.000.000");
 		int[] a = gen(10_000_000);
 		assertEquals(searchHigher(a, 1_314_155), Arrays.binarySearch(a, 1_314_155));
@@ -184,23 +184,23 @@ public class BinSeaTests {
 		assertEquals(searchHigher(a, 968_686_425), Arrays.binarySearch(a, 968_686_425));
 		assertEquals(searchLower(a, 968_686_425), Arrays.binarySearch(a, 968_686_425));
 	}
-	
+
 	/**
-	 * Generiert irgendeine Sequenz, die streng monoton steigt und somit für bin_search.
+	 * Generiert irgendeine erfundene Sequenz, die streng monoton steigt. 
 	 * Bei size >= 22_139_005 entstehen Overflows, d.h. Zahlen werden plötzlich negativ.
 	 */
 	private static int[] gen(int size) {
 		int[] a = new int[size];
 		a[0] = 1;
 		for (int i = 1; i < a.length; i++) {
-			int prev = a[i-1];
-			a[i] = prev++ + prev%(i%(prev+1)+1);
+			int prev = a[i - 1];
+			a[i] = prev++ + prev % (i % (prev + 1) + 1);
 		}
 		return a;
 	}
 
 	/**
-	 * Simple assert-Methode zum vergleichen von ints.
+	 * Simple assert-Methode zum Vergleichen von ints.
 	 */
 	private static void assertEquals(int actual, int expected) {
 		if (actual == expected)
