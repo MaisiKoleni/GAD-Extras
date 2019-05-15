@@ -3,7 +3,7 @@ TUM GAD 2019 Extras (Tests &amp; co.)
 
 Hier sind Testfälle zu den Hausaufgaben (und später vielleicht noch anderes) zu finden.
 
-Das stellt für euch von Seiten der ÜL) kein Problem dar:
+Das stellt für euch (von Seiten der ÜL) kein Problem dar:
 > [...] solange die Tests keinen Code enthalten, der die Implementierung der Aufgaben vereinfacht, sollte das kein Problem sein.
  Wichtig ist, dass die Studenten trotzdem die main-Methode aus der Angabe ohne Veränderungen hochladen. Dass *zusätzlicher Code über die Problemstellung hinaus* bei mehreren Studenten gleich ist, stellt kein Problem dar. [...]
 
