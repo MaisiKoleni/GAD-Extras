@@ -15,3 +15,5 @@ Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht du
 
 *Die Klasse testet auch mit int-Arrays, die mehrfach den selben Wert enthalten, das ist wohl nicht erforderlich.
 In dem Fall einfach die Testfälle, die mehrmals die 5 enthalten entfernen oder auskommentieren.*
+
+**Bitte auf die aktuelle Version (1.1) wechseln, keinesfalls die alte verwenden!**
