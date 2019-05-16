@@ -55,7 +55,7 @@ public class BinSeaTests {
 
 		assertEquals(searchLower(new int[] { 1, 5 }, 5), 1);
 		assertEquals(searchLower(new int[] { 5, 8 }, 5), 0);
-		assertEquals(searchLower(new int[] { 5, 5 }, 5), 1);
+		assertEquals(searchLower(new int[] { 5, 5 }, 5), 0);
 
 		System.out.println("LOWER - THREE");
 		assertEquals(searchLower(new int[] { 1, 2, 3 }, 5), -1);
@@ -66,48 +66,49 @@ public class BinSeaTests {
 		assertEquals(searchLower(new int[] { 1, 2, 5 }, 5), 2);
 		assertEquals(searchLower(new int[] { 5, 7, 8 }, 5), 0);
 		assertEquals(searchLower(new int[] { 1, 5, 8 }, 5), 1);
-		assertEquals(searchLower(new int[] { 1, 5, 5 }, 5), 2);
-		assertEquals(searchLower(new int[] { 5, 5, 8 }, 5), 1);
-		assertEquals(searchLower(new int[] { 5, 5, 5 }, 5), 2);
+		assertEquals(searchLower(new int[] { 1, 5, 5 }, 5), 1);
+		assertEquals(searchLower(new int[] { 5, 5, 8 }, 5), 0);
+		assertEquals(searchLower(new int[] { 5, 5, 5 }, 5), 0);
 
 		System.out.println("LOWER - SEVEN");
 		assertEquals(searchLower(new int[] { 1, 2, 2, 3, 4, 4, 4 }, 5), -1);
 		assertEquals(searchLower(new int[] { 6, 6, 7, 8, 8, 9, 9 }, 5), 0);
 
-		assertEquals(searchLower(new int[] { 5, 5, 5, 6, 7, 8, 9 }, 5), 2);
-		assertEquals(searchLower(new int[] { 1, 2, 3, 4, 5, 5, 5 }, 5), 6);
-		assertEquals(searchLower(new int[] { 5, 5, 5, 5, 7, 8, 9 }, 5), 3);
-		assertEquals(searchLower(new int[] { 1, 2, 3, 5, 5, 5, 5 }, 5), 6);
+		assertEquals(searchLower(new int[] { 5, 5, 5, 6, 7, 8, 9 }, 5), 0);
+		assertEquals(searchLower(new int[] { 1, 2, 3, 4, 5, 5, 5 }, 5), 4);
+		assertEquals(searchLower(new int[] { 5, 5, 5, 5, 7, 8, 9 }, 5), 0);
+		assertEquals(searchLower(new int[] { 1, 2, 3, 5, 5, 5, 5 }, 5), 3);
 
-		assertEquals(searchLower(new int[] { 1, 5, 5, 5, 7, 8, 9 }, 5), 3);
-		assertEquals(searchLower(new int[] { 1, 2, 3, 5, 5, 5, 9 }, 5), 5);
+		assertEquals(searchLower(new int[] { 1, 5, 5, 5, 7, 8, 9 }, 5), 1);
+		assertEquals(searchLower(new int[] { 1, 2, 3, 5, 5, 5, 9 }, 5), 3);
 
 		assertEquals(searchLower(new int[] { 1, 2, 3, 5, 6, 7, 8 }, 5), 3);
-		assertEquals(searchLower(new int[] { 1, 2, 5, 5, 5, 7, 8 }, 5), 4);
-		assertEquals(searchLower(new int[] { 1, 5, 5, 5, 5, 5, 8 }, 5), 5);
-		assertEquals(searchLower(new int[] { 5, 5, 5, 5, 5, 5, 5 }, 5), 6);
+		assertEquals(searchLower(new int[] { 1, 2, 5, 5, 5, 7, 8 }, 5), 2);
+		assertEquals(searchLower(new int[] { 1, 5, 5, 5, 5, 5, 8 }, 5), 1);
+		assertEquals(searchLower(new int[] { 5, 5, 5, 5, 5, 5, 5 }, 5), 0);
 
 		System.out.println("LOWER - EIGHT");
 		assertEquals(searchLower(new int[] { 1, 2, 2, 3, 3, 4, 4, 4 }, 5), -1);
 		assertEquals(searchLower(new int[] { 6, 6, 7, 7, 8, 8, 9, 9 }, 5), 0);
 
-		assertEquals(searchLower(new int[] { 5, 5, 5, 5, 6, 7, 8, 9 }, 5), 3);
-		assertEquals(searchLower(new int[] { 5, 5, 5, 6, 6, 7, 8, 9 }, 5), 2);
-		assertEquals(searchLower(new int[] { 1, 2, 3, 4, 5, 5, 5, 5 }, 5), 7);
-		assertEquals(searchLower(new int[] { 1, 2, 3, 4, 4, 5, 5, 5 }, 5), 7);
+		assertEquals(searchLower(new int[] { 5, 5, 5, 5, 6, 7, 8, 9 }, 5), 0);
+		assertEquals(searchLower(new int[] { 5, 5, 5, 6, 6, 7, 8, 9 }, 5), 0);
+		assertEquals(searchLower(new int[] { 1, 2, 3, 4, 5, 5, 5, 5 }, 5), 4);
+		assertEquals(searchLower(new int[] { 1, 2, 3, 4, 4, 5, 5, 5 }, 5), 5);
 
-		assertEquals(searchLower(new int[] { 1, 5, 5, 5, 6, 7, 8, 9 }, 5), 3);
-		assertEquals(searchLower(new int[] { 1, 5, 5, 6, 6, 7, 8, 9 }, 5), 2);
-		assertEquals(searchLower(new int[] { 1, 2, 3, 4, 5, 5, 5, 9 }, 5), 6);
-		assertEquals(searchLower(new int[] { 1, 2, 3, 4, 4, 5, 5, 9 }, 5), 6);
+		assertEquals(searchLower(new int[] { 1, 5, 5, 5, 6, 7, 8, 9 }, 5), 1);
+		assertEquals(searchLower(new int[] { 1, 5, 5, 6, 6, 7, 8, 9 }, 5), 1);
+		assertEquals(searchLower(new int[] { 1, 2, 3, 4, 5, 5, 5, 9 }, 5), 4);
+		assertEquals(searchLower(new int[] { 1, 2, 3, 4, 4, 5, 5, 9 }, 5), 5);
 
-		assertEquals(searchLower(new int[] { 1, 2, 3, 5, 5, 5, 8, 9 }, 5), 5);
+		assertEquals(searchLower(new int[] { 1, 2, 3, 5, 5, 5, 8, 9 }, 5), 3);
 		assertEquals(searchLower(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 5), 4);
 		assertEquals(searchLower(new int[] { 1, 2, 3, 5, 6, 6, 7, 8 }, 5), 3);
-		assertEquals(searchLower(new int[] { 1, 2, 3, 5, 5, 6, 7, 8 }, 5), 4);
-		assertEquals(searchLower(new int[] { 1, 2, 5, 5, 5, 5, 7, 8 }, 5), 5);
-		assertEquals(searchLower(new int[] { 1, 5, 5, 5, 5, 5, 5, 8 }, 5), 6);
-		assertEquals(searchLower(new int[] { 5, 5, 5, 5, 5, 5, 5, 5 }, 5), 7);
+		assertEquals(searchLower(new int[] { 1, 2, 3, 5, 5, 6, 7, 8 }, 5), 3);
+		assertEquals(searchLower(new int[] { 1, 2, 5, 5, 5, 5, 7, 8 }, 5), 2);
+		assertEquals(searchLower(new int[] { 1, 5, 5, 5, 5, 5, 5, 8 }, 5), 1);
+		assertEquals(searchLower(new int[] { 5, 5, 5, 5, 5, 5, 5, 5 }, 5), 0);
+		
 
 		System.out.println("HIGHER - ONE");
 		assertEquals(searchHigher(new int[] { 1 }, 5), 0);
@@ -121,7 +122,7 @@ public class BinSeaTests {
 
 		assertEquals(searchHigher(new int[] { 1, 5 }, 5), 1);
 		assertEquals(searchHigher(new int[] { 5, 8 }, 5), 0);
-		assertEquals(searchHigher(new int[] { 5, 5 }, 5), 0);
+		assertEquals(searchHigher(new int[] { 5, 5 }, 5), 1);
 
 		System.out.println("HIGHER - THREE");
 		assertEquals(searchHigher(new int[] { 1, 2, 3 }, 5), 2);
@@ -132,48 +133,48 @@ public class BinSeaTests {
 		assertEquals(searchHigher(new int[] { 1, 2, 5 }, 5), 2);
 		assertEquals(searchHigher(new int[] { 5, 7, 8 }, 5), 0);
 		assertEquals(searchHigher(new int[] { 1, 5, 8 }, 5), 1);
-		assertEquals(searchHigher(new int[] { 1, 5, 5 }, 5), 1);
-		assertEquals(searchHigher(new int[] { 5, 5, 8 }, 5), 0);
-		assertEquals(searchHigher(new int[] { 5, 5, 5 }, 5), 0);
+		assertEquals(searchHigher(new int[] { 1, 5, 5 }, 5), 2);
+		assertEquals(searchHigher(new int[] { 5, 5, 8 }, 5), 1);
+		assertEquals(searchHigher(new int[] { 5, 5, 5 }, 5), 2);
 
 		System.out.println("HIGHER - SEVEN");
 		assertEquals(searchHigher(new int[] { 1, 2, 2, 3, 4, 4, 4 }, 5), 6);
 		assertEquals(searchHigher(new int[] { 6, 6, 7, 8, 8, 9, 9 }, 5), -1);
 
-		assertEquals(searchHigher(new int[] { 5, 5, 5, 6, 7, 8, 9 }, 5), 0);
-		assertEquals(searchHigher(new int[] { 1, 2, 3, 4, 5, 5, 5 }, 5), 4);
-		assertEquals(searchHigher(new int[] { 5, 5, 5, 5, 7, 8, 9 }, 5), 0);
-		assertEquals(searchHigher(new int[] { 1, 2, 3, 5, 5, 5, 5 }, 5), 3);
+		assertEquals(searchHigher(new int[] { 5, 5, 5, 6, 7, 8, 9 }, 5), 2);
+		assertEquals(searchHigher(new int[] { 1, 2, 3, 4, 5, 5, 5 }, 5), 6);
+		assertEquals(searchHigher(new int[] { 5, 5, 5, 5, 7, 8, 9 }, 5), 3);
+		assertEquals(searchHigher(new int[] { 1, 2, 3, 5, 5, 5, 5 }, 5), 6);
 
-		assertEquals(searchHigher(new int[] { 1, 5, 5, 5, 7, 8, 9 }, 5), 1);
-		assertEquals(searchHigher(new int[] { 1, 2, 3, 5, 5, 5, 9 }, 5), 3);
+		assertEquals(searchHigher(new int[] { 1, 5, 5, 5, 7, 8, 9 }, 5), 3);
+		assertEquals(searchHigher(new int[] { 1, 2, 3, 5, 5, 5, 9 }, 5), 5);
 
 		assertEquals(searchHigher(new int[] { 1, 2, 3, 5, 6, 7, 8 }, 5), 3);
-		assertEquals(searchHigher(new int[] { 1, 2, 5, 5, 5, 7, 8 }, 5), 2);
-		assertEquals(searchHigher(new int[] { 1, 5, 5, 5, 5, 5, 8 }, 5), 1);
-		assertEquals(searchHigher(new int[] { 5, 5, 5, 5, 5, 5, 5 }, 5), 0);
+		assertEquals(searchHigher(new int[] { 1, 2, 5, 5, 5, 7, 8 }, 5), 4);
+		assertEquals(searchHigher(new int[] { 1, 5, 5, 5, 5, 5, 8 }, 5), 5);
+		assertEquals(searchHigher(new int[] { 5, 5, 5, 5, 5, 5, 5 }, 5), 6);
 
 		System.out.println("HIGHER - EIGHT");
 		assertEquals(searchHigher(new int[] { 1, 2, 2, 3, 3, 4, 4, 4 }, 5), 7);
 		assertEquals(searchHigher(new int[] { 6, 6, 7, 7, 8, 8, 9, 9 }, 5), -1);
 
-		assertEquals(searchHigher(new int[] { 5, 5, 5, 5, 6, 7, 8, 9 }, 5), 0);
-		assertEquals(searchHigher(new int[] { 5, 5, 5, 6, 6, 7, 8, 9 }, 5), 0);
-		assertEquals(searchHigher(new int[] { 1, 2, 3, 4, 5, 5, 5, 5 }, 5), 4);
-		assertEquals(searchHigher(new int[] { 1, 2, 3, 4, 4, 5, 5, 5 }, 5), 5);
+		assertEquals(searchHigher(new int[] { 5, 5, 5, 5, 6, 7, 8, 9 }, 5), 3);
+		assertEquals(searchHigher(new int[] { 5, 5, 5, 6, 6, 7, 8, 9 }, 5), 2);
+		assertEquals(searchHigher(new int[] { 1, 2, 3, 4, 5, 5, 5, 5 }, 5), 7);
+		assertEquals(searchHigher(new int[] { 1, 2, 3, 4, 4, 5, 5, 5 }, 5), 7);
 
-		assertEquals(searchHigher(new int[] { 1, 5, 5, 5, 6, 7, 8, 9 }, 5), 1);
-		assertEquals(searchHigher(new int[] { 1, 5, 5, 6, 6, 7, 8, 9 }, 5), 1);
-		assertEquals(searchHigher(new int[] { 1, 2, 3, 4, 5, 5, 5, 9 }, 5), 4);
-		assertEquals(searchHigher(new int[] { 1, 2, 3, 4, 4, 5, 5, 9 }, 5), 5);
+		assertEquals(searchHigher(new int[] { 1, 5, 5, 5, 6, 7, 8, 9 }, 5), 3);
+		assertEquals(searchHigher(new int[] { 1, 5, 5, 6, 6, 7, 8, 9 }, 5), 2);
+		assertEquals(searchHigher(new int[] { 1, 2, 3, 4, 5, 5, 5, 9 }, 5), 6);
+		assertEquals(searchHigher(new int[] { 1, 2, 3, 4, 4, 5, 5, 9 }, 5), 6);
 
-		assertEquals(searchHigher(new int[] { 1, 2, 3, 5, 5, 5, 8, 9 }, 5), 3);
+		assertEquals(searchHigher(new int[] { 1, 2, 3, 5, 5, 5, 8, 9 }, 5), 5);
 		assertEquals(searchHigher(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 5), 4);
 		assertEquals(searchHigher(new int[] { 1, 2, 3, 5, 6, 6, 7, 8 }, 5), 3);
-		assertEquals(searchHigher(new int[] { 1, 2, 3, 5, 5, 6, 7, 8 }, 5), 3);
-		assertEquals(searchHigher(new int[] { 1, 2, 5, 5, 5, 5, 7, 8 }, 5), 2);
-		assertEquals(searchHigher(new int[] { 1, 5, 5, 5, 5, 5, 5, 8 }, 5), 1);
-		assertEquals(searchHigher(new int[] { 5, 5, 5, 5, 5, 5, 5, 5 }, 5), 0);
+		assertEquals(searchHigher(new int[] { 1, 2, 3, 5, 5, 6, 7, 8 }, 5), 4);
+		assertEquals(searchHigher(new int[] { 1, 2, 5, 5, 5, 5, 7, 8 }, 5), 5);
+		assertEquals(searchHigher(new int[] { 1, 5, 5, 5, 5, 5, 5, 8 }, 5), 6);
+		assertEquals(searchHigher(new int[] { 5, 5, 5, 5, 5, 5, 5, 5 }, 5), 7);
 
 		System.out.println("HIGHER/LOWER - 10.000.000");
 		int[] a = gen(10_000_000);
