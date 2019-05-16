@@ -6,6 +6,7 @@ import java.util.Arrays;
  * 
  * Bitte nicht mit abgeben. (geht sonst nicht)
  * 
+ * @version 1.1
  * @author Christian Femers (IN.TUM)
  *
  */
