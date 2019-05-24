@@ -20,3 +20,5 @@ In dem Fall einfach die Testfälle, die mehrmals die 5 enthalten entfernen oder 
 
 ## Blatt03
 Momentan gibt es erstmal nur eine Testklasse für DynamicArray (was aber auch am wichtigsten ist). Lässt sich einfach zu den anderen Klassen packen und dann ausführen. Möglicherweise kommen später noch mehr dazu. Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht durch.
+
+**Bitte auf die aktuelle Version (1.1) wechseln, keinesfalls die alte verwenden!**
