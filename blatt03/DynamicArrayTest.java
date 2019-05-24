@@ -146,13 +146,15 @@ public class DynamicArrayTest {
 		da.set(1, 2);
 		da.set(2, 3);
 		checkDynArray(da, 1, 2, 3, 0);
+		da.set(3, 4);
+		checkDynArray(da, 1, 2, 3, 4);
 
 		i = da.reportUsage(of(0, 2), 3);
-		checkDynArray(da, 1, 2, 3, 0); // no change
+		checkDynArray(da, 1, 2, 3, 4); // no change
 		assertIntervalEquals(i, of(0, 2));
 
-		i = da.reportUsage(of(0, 2), 5);
-		checkDynArray(da, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0); // size increase
+		i = da.reportUsage(of(0, 3), 5);
+		checkDynArray(da, 1, 2, 3, 4, 0, 0, 0, 0, 0, 0); // size increase
 		assertIntervalEquals(i, of(0, 2));
 
 		i = da.reportUsage(of(1, 2), 0);
