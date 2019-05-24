@@ -155,7 +155,7 @@ public class DynamicArrayTest {
 
 		i = da.reportUsage(of(0, 3), 5);
 		checkDynArray(da, 1, 2, 3, 4, 0, 0, 0, 0, 0, 0); // size increase
-		assertIntervalEquals(i, of(0, 2));
+		assertIntervalEquals(i, of(0, 3));
 
 		i = da.reportUsage(of(1, 2), 0);
 		checkDynArray(da, 2, 3, 0, 0); // size decrease, elements reordered
@@ -165,7 +165,7 @@ public class DynamicArrayTest {
 		checkDynArray(da, 2, 3, 0, 0); // no change
 		assertIntervalEquals(i, of(0, 0));
 
-		i = da.reportUsage(of(1, 0), 5); // index order here: 1,2,3,0
+		i = da.reportUsage(of(1, 0), 5); // index order here: 1-2-3-0
 		checkDynArray(da, 3, 0, 0, 2, 0, 0, 0, 0, 0, 0); // size increase and reorder
 		assertIntervalEquals(i, of(0, 3));
 
