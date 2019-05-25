@@ -10,7 +10,7 @@ import java.util.Objects;
  * 
  * Bitte nicht mit abgeben. (geht sonst nicht)
  * 
- * @version 1.4
+ * @version 1.5
  * 
  * @author Christian Femers (IN.TUM)
  *

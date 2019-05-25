@@ -8,7 +8,7 @@ import java.util.List;
  * 
  * Bitte nicht mit abgeben. (geht sonst nicht)
  * 
- * @version 1.4
+ * @version 1.5
  * 
  * @since 1.1 fixed test
  * @since 1.2 added test case id to identify single tests better
