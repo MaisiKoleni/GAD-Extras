@@ -10,14 +10,16 @@ import java.util.Objects;
  * 
  * Bitte nicht mit abgeben. (geht sonst nicht)
  * 
- * @version 1.3
+ * @version 1.4
+ * 
+ * @since 1.4 small style improvements
  * 
  * @author Christian Femers (IN.TUM)
  *
  */
 public class DynamicStackTest {
 
-	private static Counter testNum = new Counter(5);
+	private static Counter testNum = new Counter(0);
 	private static Counter testMethod = new Counter(5);
 
 	private static final int[] EMPTY = new int[0];
@@ -313,11 +315,11 @@ public class DynamicStackTest {
 			f.setAccessible(true);
 			return (DynamicArray) Objects.requireNonNull(f.get(ds));
 		} catch (NoSuchFieldException e) {
-			throw new IllegalStateException("Konnte das DynnamicArray Attribut 'dynArr' nicht finden. "
+			throw new IllegalStateException("Konnte das DynamicArray Attribut 'dynArr' nicht finden. "
 					+ "Bitte überprüfen, dass es nicht umbennant wurde.", e);
-		} catch (@SuppressWarnings("unused") NullPointerException e) {
-			throw new NullPointerException(
-					"Entweder der DynamicStack ist null oder der DynamicArray 'dynArr' darinnen.");
+		} catch (NullPointerException e) {
+			throw new IllegalStateException(
+					"Entweder der DynamicStack ist null oder der DynamicArray 'dynArr' darinnen.", e);
 		} catch (ClassCastException e) {
 			throw new IllegalStateException("In Attribut 'dynArr' ist kein DynamicArray-Objekt O.o", e);
 		} catch (IllegalAccessException | SecurityException e) {
