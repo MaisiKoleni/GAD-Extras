@@ -16,11 +16,11 @@ Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht du
 *Die Klasse testet auch mit int-Arrays, die mehrfach den selben Wert enthalten, das ist wohl nicht erforderlich.
 In dem Fall einfach die Testfälle, die mehrmals die 5 enthalten entfernen oder auskommentieren.*
 
-**Bitte auf die aktuelle Version (1.1) wechseln, keinesfalls die alte verwenden!**
+**Bitte nicht mehr Version 1.0 oder älter verwenden! (aktuell: 1.1)**
 
 ## Blatt03
 Momentan gibt es erstmal nur eine Testklasse für DynamicArray (was aber auch am wichtigsten ist). Lässt sich einfach zu den anderen Klassen packen und dann ausführen. Möglicherweise kommen später noch mehr dazu. Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht durch.
 
 *Wichtig: es gibt auch noch weitere richtige Lösungen, die vielleicht nicht "optimal" sind. Meine Lösung geht davon aus, dass Elemente bei einer Größenänderung an den Arrayanfang geordnet werden und dass immer nur das nötigste kopiert wird (Kopieraufwand minimieren)*
 
-**Bitte auf die aktuelle Version (1.1) wechseln, keinesfalls die alte verwenden!**
+**Bitte nicht mehr Version 1.0 oder älter verwenden! (aktuell: 1.2)**
