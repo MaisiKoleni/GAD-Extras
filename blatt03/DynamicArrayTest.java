@@ -8,18 +8,21 @@ import java.util.List;
  * 
  * Bitte nicht mit abgeben. (geht sonst nicht)
  * 
- * @version 1.2
+ * @version 1.3
  * 
- * @since 1.1 fixed Test
+ * @since 1.1 fixed test
  * @since 1.2 added test case id to identify single tests better
+ * @since 1.3 some style improvements
  * 
  * @author Christian Femers (IN.TUM)
  *
  */
 public class DynamicArrayTest {
 
-	private static Counter testNum = new Counter();
-	private static Counter testMethod = new Counter();
+	private static Counter testNum = new Counter(0);
+	private static Counter testMethod = new Counter(0);
+
+	private static final int[] EMPTY = new int[0];
 
 	static {
 		System.out.println("CF's TESTS ACTIVE\n");
@@ -45,7 +48,7 @@ public class DynamicArrayTest {
 		Interval i;
 
 		// 1
-		checkDynArray(da, new int[0]);
+		checkDynArray(da, EMPTY);
 
 		// 2, 3
 		i = da.reportUsage(of(), 1); // minSize * growth factor = 1 * 2
@@ -96,7 +99,7 @@ public class DynamicArrayTest {
 
 		// 5, 6
 		i = da.reportUsage(of(), 0);
-		checkDynArray(da, new int[0]); // minSize * growth factor = 0 * 2
+		checkDynArray(da, EMPTY); // minSize * growth factor = 0 * 2
 		assertIntervalEquals(i, of());
 	}
 
@@ -109,7 +112,7 @@ public class DynamicArrayTest {
 		Interval i;
 
 		// 1
-		checkDynArray(da, new int[0]);
+		checkDynArray(da, EMPTY);
 
 		// 2, 3
 		i = da.reportUsage(of(), 1); // minSize * growth factor = 1 * 2
@@ -160,7 +163,7 @@ public class DynamicArrayTest {
 
 		// 5, 6
 		i = da.reportUsage(of(-1, -1), 0);
-		checkDynArray(da, new int[0]); // intervalLength * growth factor = 0 * 2
+		checkDynArray(da, EMPTY); // intervalLength * growth factor = 0 * 2
 		assertIntervalEquals(i, of());
 	}
 
@@ -216,7 +219,7 @@ public class DynamicArrayTest {
 
 		// G, H
 		i = da.reportUsage(of(), 0);
-		checkDynArray(da, new int[0]); // make empty
+		checkDynArray(da, EMPTY); // make empty
 		assertIntervalEquals(i, of());
 	}
 
@@ -288,8 +291,12 @@ public class DynamicArrayTest {
 	/**
 	 * Counter that can count from 1 to 9 then A to Z (35 digits)
 	 */
-	private static class Counter {
+	public static class Counter {
 		private int count;
+
+		public Counter(int count) {
+			this.count = count;
+		}
 
 		public String incrementAndGet() {
 			count++;
