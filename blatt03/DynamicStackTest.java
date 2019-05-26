@@ -21,7 +21,7 @@ import java.util.Objects;
  */
 public class DynamicStackTest {
 
-	private static final String VERSION = "1.6";
+	private static final String VERSION = "1.4";
 
 	private static Counter testNum = new Counter(0);
 	private static Counter testMethod = new Counter(5);
@@ -375,7 +375,7 @@ public class DynamicStackTest {
 	private static void tryVersionCheck() {
 		try {
 			Class.forName("CFUpdate").getDeclaredMethod("checkForNewVersion", String.class, Class.class, String.class)
-					.invoke(null, "blatt03", StackyQueueTest.class, VERSION);
+					.invoke(null, "blatt03", DynamicStackTest.class, VERSION);
 		} catch (@SuppressWarnings("unused") ClassNotFoundException e) {
 			System.out.println("Automatic update checks are inactive, download the CFUpdate class for that:");
 			System.out.println("https://raw.githubusercontent.com/MaisiKoleni/GAD-Extras/master/version/CFUpdate.java");

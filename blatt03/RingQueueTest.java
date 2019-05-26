@@ -283,7 +283,7 @@ public class RingQueueTest {
 	private static void tryVersionCheck() {
 		try {
 			Class.forName("CFUpdate").getDeclaredMethod("checkForNewVersion", String.class, Class.class, String.class)
-					.invoke(null, "blatt03", StackyQueueTest.class, VERSION);
+					.invoke(null, "blatt03", RingQueueTest.class, VERSION);
 		} catch (@SuppressWarnings("unused") ClassNotFoundException e) {
 			System.out.println("Automatic update checks are inactive, download the CFUpdate class for that:");
 			System.out.println("https://raw.githubusercontent.com/MaisiKoleni/GAD-Extras/master/version/CFUpdate.java");
