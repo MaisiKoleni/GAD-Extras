@@ -10,14 +10,18 @@ import java.util.Objects;
  * 
  * Bitte nicht mit abgeben. (geht sonst nicht)
  * 
- * @version 1.5
+ * @version 1.6
  * 
- * @since 1.4 small style improvements
+ * @since 1.4 small style improvements [added StackyQueueTest]
+ * @since 1.5 [added RingQueueTest]
+ * @since 1.6 added version check
  * 
  * @author Christian Femers (IN.TUM)
  *
  */
 public class DynamicStackTest {
+
+	private static final String VERSION = "1.6";
 
 	private static Counter testNum = new Counter(0);
 	private static Counter testMethod = new Counter(5);
@@ -25,6 +29,8 @@ public class DynamicStackTest {
 	private static final int[] EMPTY = new int[0];
 
 	static {
+		tryVersionCheck();
+
 		System.out.println("CF's TESTS ACTIVE\n");
 	}
 
@@ -363,6 +369,20 @@ public class DynamicStackTest {
 
 		public void reset() {
 			count = 0;
+		}
+	}
+
+	private static void tryVersionCheck() {
+		try {
+			Class.forName("CFUpdate").getDeclaredMethod("checkForNewVersion", String.class, Class.class, String.class)
+					.invoke(null, "blatt03", StackyQueueTest.class, VERSION);
+		} catch (@SuppressWarnings("unused") ClassNotFoundException e) {
+			System.out.println("Automatic update checks are inactive, download the CFUpdate class for that:");
+			System.out.println("https://raw.githubusercontent.com/MaisiKoleni/GAD-Extras/master/version/CFUpdate.java");
+			System.out.println();
+		} catch (IllegalArgumentException | ReflectiveOperationException | SecurityException e) {
+			System.err.println("Something went wrong invoking checkForNewerVersion:");
+			e.printStackTrace();
 		}
 	}
 }
