@@ -21,6 +21,7 @@ Für dieses Opt-In:
  * [Die Klasse](version/CFUpdate.java) herunterladen oder das bisschen Code darin kopieren.
  * Die Klasse zu den anderen Testklassen (in default-Package) ablegen.
  * Die Testklassen ausführen und bei Neuerungen informiert werden.
+(das geht natürlich erst bei Tests ab Version 1.2 für `blatt02` und Version 1.6 für `blatt03`)
 
 ## Blatt02
 Testklasse für das Testen von higher/lower bei BinSea. Ausführbar über die main-Methode. Lässt sich einfach zu den anderen Klassen packen.
