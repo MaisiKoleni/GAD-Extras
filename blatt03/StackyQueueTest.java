@@ -10,17 +10,18 @@ import java.util.Objects;
  * 
  * Bitte nicht mit abgeben. (geht sonst nicht)
  * 
- * @version 1.6
+ * @version 1.7
  * 
  * @since 1.5 [added RingQueueTest]
  * @since 1.6 added version check
+ * @since 1.7 [extended RingQueueTest]
  * 
  * @author Christian Femers (IN.TUM)
  *
  */
 public class StackyQueueTest {
 
-	private static final String VERSION = "1.6";
+	private static final String VERSION = "1.7";
 
 	private static Counter testNum = new Counter(0);
 	private static Counter testMethod = new Counter(11);

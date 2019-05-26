@@ -11,16 +11,17 @@ import java.util.regex.Pattern;
  * 
  * Bitte nicht mit abgeben. (geht sonst nicht)
  * 
- * @version 1.6
+ * @version 1.7
  * 
  * @since 1.6 added version check
+ * @since 1.7 added mixed 3 and 4 to find more bugs
  * 
  * @author Christian Femers (IN.TUM)
  *
  */
 public class RingQueueTest {
 
-	private static final String VERSION = "1.6";
+	private static final String VERSION = "1.7";
 
 	private static Counter testNum = new Counter(0);
 	private static Counter testMethod = new Counter(16);
@@ -35,7 +36,7 @@ public class RingQueueTest {
 	}
 
 	public static void main(String[] args) {
-		// Test H, I
+		// Test H, I, J, K
 		testMixed();
 	}
 
@@ -158,6 +159,75 @@ public class RingQueueTest {
 		// I, J, K, L
 		i = rq.dequeue();
 		assertEquals(i, 20);
+		checkDynArray(da, EMPTY);
+		checkSize(rq, 0);
+		checkFromTo(rq, 0, 0);
+
+		printTestHeadline("TEST MIXED 3"); // Test J
+
+		// 1, 2, 3
+		rq.enqueue(1);
+		checkDynArray(da, 1, 0);
+		checkSize(rq, 1);
+		checkFromTo(rq, 0, 0);
+
+		// 4, 5, 6
+		rq.enqueue(2);
+		checkDynArray(da, 1, 2);
+		checkSize(rq, 2);
+		checkFromTo(rq, 0, 1);
+
+		// 7, 8, 9, A
+		i = rq.dequeue();
+		assertEquals(i, 1);
+		checkDynArray(da, 1, 2);
+		checkSize(rq, 1);
+		checkFromTo(rq, 1, 1);
+
+		// B, C, D, E
+		i = rq.dequeue();
+		assertEquals(i, 2);
+		checkDynArray(da, EMPTY);
+		checkSize(rq, 0);
+		checkFromTo(rq, 0, 0);
+
+		printTestHeadline("TEST MIXED 4"); // Test K
+
+		// 1, 2, 3
+		rq.enqueue(1);
+		checkDynArray(da, 1, 0);
+		checkSize(rq, 1);
+		checkFromTo(rq, 0, 0);
+
+		// 4, 5, 6
+		rq.enqueue(2);
+		checkDynArray(da, 1, 2);
+		checkSize(rq, 2);
+		checkFromTo(rq, 0, 1);
+
+		// 7, 8, 9, A
+		i = rq.dequeue();
+		assertEquals(i, 1);
+		checkDynArray(da, 1, 2);
+		checkSize(rq, 1);
+		checkFromTo(rq, 1, 1);
+
+		// B, C, D
+		rq.enqueue(3);
+		checkDynArray(da, 3, 2);
+		checkSize(rq, 2);
+		checkFromTo(rq, 1, 0);
+
+		// E, F, G, H
+		i = rq.dequeue();
+		assertEquals(i, 2);
+		checkDynArray(da, 3, 2);
+		checkSize(rq, 1);
+		checkFromTo(rq, 0, 0);
+
+		// I, J, K, L
+		i = rq.dequeue();
+		assertEquals(i, 3);
 		checkDynArray(da, EMPTY);
 		checkSize(rq, 0);
 		checkFromTo(rq, 0, 0);
