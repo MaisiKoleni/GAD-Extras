@@ -13,11 +13,20 @@ import java.util.prefs.Preferences;
  * <p>
  * Place this class next to the test classes to enable automatic version checks
  * 
- * @version 1.0
+ * @version 1.1
+ * 
+ * @since 1.1 increased confirmation period and added updater updater
  *
  * @author Christian Femers
  */
-public class CFUpdate {
+public final class CFUpdate {
+
+	/**
+	 * self update check
+	 */
+	static {
+		checkForNewVersion("version", CFUpdate.class, "1.1");
+	}
 
 	/**
 	 * Automatically checks for new versions. This should help to communicate
@@ -26,7 +35,7 @@ public class CFUpdate {
 	 */
 	static void checkForNewVersion(String blatt, Class<?> testClass, String currentVersion) {
 		String testName = testClass.getSimpleName();
-		if (!testName.endsWith("Test"))
+		if (!testName.endsWith("Test") && !testClass.equals(CFUpdate.class))
 			throw new IllegalArgumentException("Please pass a valid test class. Found: " + testName);
 		String key = blatt + "." + testName + "_last_update_check";
 		String url = "https://raw.githubusercontent.com/MaisiKoleni/GAD-Extras/master/" + blatt + "/" + testName
@@ -39,9 +48,9 @@ public class CFUpdate {
 				try (InputStream is = new URL(url).openStream()) {
 					String content = new String(is.readAllBytes(), StandardCharsets.UTF_8);
 					// search for version in the code and compare both
-					String v = content.replaceFirst("(?s).* @version (\\S+).*", "$1");
+					String v = content.replaceFirst("(?s).*? @version (\\S+).*", "$1");
 					if (v.compareTo(currentVersion) > 0) {
-						// print that a newer version is there and wait 10 seconds for input
+						// print that a newer version is there and wait 20 seconds for input
 						System.err.format("%n>>> There is a newer Version (%s) available under <<<%n%s%n%n", v, url);
 						try (Scanner sc = new Scanner(System.in)) {
 							System.out.println("Print the new source code now? y/n (10 sec)");
