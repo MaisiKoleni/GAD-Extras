@@ -53,7 +53,7 @@ public final class CFUpdate {
 						// print that a newer version is there and wait 20 seconds for input
 						System.err.format("%n>>> There is a newer Version (%s) available under <<<%n%s%n%n", v, url);
 						try (Scanner sc = new Scanner(System.in)) {
-							System.out.println("Print the new source code now? y/n (10 sec)");
+							System.out.format("Print the new source code for %s now? y/n (10 sec)%n", testName);
 							for (int i = 0; i < 200 && System.in.available() == 0; i++) {
 								try {
 									Thread.sleep(50);
@@ -67,6 +67,8 @@ public final class CFUpdate {
 								System.out.println(content);
 							else
 								System.out.println("Exiting...");
+						} catch (@SuppressWarnings("unused") IOException e) {
+							System.err.println("System.in already in use (two updates at the same time?)");
 						}
 					}
 				} catch (IOException e) {
