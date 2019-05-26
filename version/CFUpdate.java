@@ -41,11 +41,11 @@ public class CFUpdate {
 					// search for version in the code and compare both
 					String v = content.replaceFirst("(?s).* @version (\\S+).*", "$1");
 					if (v.compareTo(currentVersion) > 0) {
-						// print that a newer version is there and wait 3 seconds for input
+						// print that a newer version is there and wait 10 seconds for input
 						System.err.format("%n>>> There is a newer Version (%s) available under <<<%n%s%n%n", v, url);
 						try (Scanner sc = new Scanner(System.in)) {
-							System.out.println("Print the new source code now? y/n (3 sec)");
-							for (int i = 0; i < 60 && System.in.available() == 0; i++) {
+							System.out.println("Print the new source code now? y/n (10 sec)");
+							for (int i = 0; i < 200 && System.in.available() == 0; i++) {
 								try {
 									Thread.sleep(50);
 								} catch (@SuppressWarnings("unused") InterruptedException e) {
