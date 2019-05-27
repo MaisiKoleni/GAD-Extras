@@ -1,3 +1,4 @@
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -13,9 +14,11 @@ import java.util.prefs.Preferences;
  * <p>
  * Place this class next to the test classes to enable automatic version checks
  * 
- * @version 1.1
+ * @version 1.2
  * 
  * @since 1.1 increased confirmation period and added updater updater
+ * @since 1.2 made checkForNewVersion public, so the test classes can be in
+ *        whatever package the user prefers, as long as CFUpdate is in default.
  *
  * @author Christian Femers
  */
@@ -25,7 +28,7 @@ public final class CFUpdate {
 	 * self update check
 	 */
 	static {
-		checkForNewVersion("version", CFUpdate.class, "1.1");
+		checkForNewVersion("version", CFUpdate.class, "1.2");
 	}
 
 	/**
@@ -33,7 +36,7 @@ public final class CFUpdate {
 	 * problems with the tests themselves and when new or extended tests are
 	 * available. Checks are done only every 30 minutes (if run, of course).
 	 */
-	static void checkForNewVersion(String blatt, Class<?> testClass, String currentVersion) {
+	public static void checkForNewVersion(String blatt, Class<?> testClass, String currentVersion) {
 		String testName = testClass.getSimpleName();
 		if (!testName.endsWith("Test") && !testClass.equals(CFUpdate.class))
 			throw new IllegalArgumentException("Please pass a valid test class. Found: " + testName);
