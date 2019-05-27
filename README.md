@@ -38,6 +38,6 @@ Momentan gibt es erstmal nur eine Testklasse für DynamicArray (was aber auch am
 
 *Wichtig: es gibt auch noch weitere richtige Lösungen, die vielleicht nicht "optimal" sind. Meine Lösung geht davon aus, dass Elemente bei einer Größenänderung an den Arrayanfang geordnet werden und dass immer nur das nötigste kopiert wird (Kopieraufwand minimieren)*
 
-**Bitte nicht mehr Version 1.0 oder älter verwenden! (aktuell: 1.6)**
+**Bitte nicht mehr Version 1.0 oder älter verwenden! (aktuell: 1.7)**
 
-**Jetzt mit Tests zu DynamicStack, StackyQueue und RingQueue (ab Version 1.6)**
+**Jetzt mit Tests zu DynamicStack, StackyQueue und RingQueue (ab Version 1.5)**
