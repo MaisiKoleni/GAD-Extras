@@ -9,18 +9,18 @@ Das stellt für euch (von Seiten der ÜL) kein Problem dar:
 
 Entfernt die Tests/Testklassen bitte trotzdem vor der Abgabe, weil sonst die Tests auf TUM-judge nicht funktionieren.
 
-## NEU: Automatische Versionsüberprüfung
+## NEU: Automatische Versionsüberprüfung (Version 1.2)
 Testfälle zu veröffentlichen ist immer ein Risiko, da diese dazu führen können, dass Leute ihren Code verschlimmbessern, wenn die Tests fehlerhaft sind. Auch die Suche nach Fehlern kann frustrierend sein, unter anderem auch weil nicht alle möglichen Fehler von den Testklassen ausreichend behandelt werden. Doch das ist nichts, was sich nicht beheben ließe. Stetig werden die Tests verbessert und aktualisiert, Bugs werden gefixt.
 
 Das größte Problem:<br>
 **Viele arbeiten immer noch lange mit den alten Tests weiter, ohne zu wissen, dass diese überarbeitet wurden.** 
 
-Um dieses Problem zu lösen, gibt es jetzt die (von mir sehr empfohlene) Möglichkeit, durch das Hinzufügen von nur einer weiteren Klasse namens [CFUpdate.java](version/CFUpdate.java) automatisch nach neuen Versionen zu prüfen. Dies wird parallel zum Test gemacht und fällt kaum auf (außer es gibt eine neue Version). Die Überprüfung findet auch nur *maximal* alle 30 Minuten statt.
+Um dieses Problem zu lösen, gibt es jetzt die (von mir sehr empfohlene) Möglichkeit, durch das Hinzufügen von nur einer weiteren Klasse namens [CFUpdate.java](version/CFUpdate.java) automatisch auf neue Versionen zu prüfen. Dies wird parallel zum Test gemacht und fällt kaum auf (außer es gibt eine neue Version). Die Überprüfung findet auch nur *maximal* alle 30 Minuten statt.
 
 Für dieses Opt-In:
  * [Die Klasse](version/CFUpdate.java) herunterladen oder das bisschen Code darin kopieren.
- * Die Klasse zu den anderen Testklassen (in default-Package) ablegen.
- * Die Testklassen ausführen und bei Neuerungen informiert werden.
+ * Die Klasse im default-Package plazieren.
+ * Die Testklassen ausführen und bei Neuerungen informiert werden (können seit 1.2 auch in anderen Packages sein).
 
 _(das geht natürlich erst bei Tests ab Version 1.2 für `blatt02` und Version 1.6 für `blatt03`)_
 
