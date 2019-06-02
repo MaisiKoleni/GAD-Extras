@@ -1,5 +1,5 @@
 # GAD-Extras
-TUM GAD 2019 Extras (Tests &amp; co.)
+TUM GAD 2019 Extras (Tests &amp; co.) von Christian Femers ([MIT-Lizenz](LICENSE))
 
 Hier sind Testfälle zu den Hausaufgaben (und später vielleicht noch anderes) zu finden.
 
