@@ -45,4 +45,4 @@ Momentan gibt es erstmal nur eine Testklasse für DynamicArray (was aber auch am
 ## [Blatt05](blatt05/)
 Jetzt gibt es Tests zu Blatt 5 für die folgenden Klassen: DoubleHashInt, DoubleHashString, DoubleHashTable (sowohl mit Integer als auch String). Es gibt auch hilfreiche Diagramme in der Konsole, um die Qualität der Hashfunktionen zu bestimmen und Probleme besser zu erkennen. Lässt sich einfach zu den anderen Klassen packen und dann ausführen. Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht durch.
 
-**Notiz: noch nichts :D (aktuell: 1.0)**
+**Notiz: Bitte nicht mehr Version 1.0 oder älter verwenden!  (aktuell: 1.1)**
