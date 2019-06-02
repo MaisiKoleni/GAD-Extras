@@ -67,7 +67,7 @@ Test 2: TEST STRING HASH m == 17
    ⁰  ¹  ²  ³  ⁴  ⁵  ⁶  ⁷  ⁸  ⁹ ¹⁰ ¹¹ ¹² ¹³ ¹⁴ ¹⁵ ¹⁶
 ```
 
-## [Blatt05](blatt05/) <span color="red"> // Version 1.1</span>
+## [Blatt05](blatt05/) `Version 1.1`
 Jetzt gibt es Tests zu Blatt 5 für die folgenden Klassen: `DoubleHashInt`, `DoubleHashString`, `DoubleHashTable` (sowohl mit Integer als auch String). Es gibt auch hilfreiche Diagramme in der Konsole, um die Qualität der Hashfunktionen zu bestimmen und Probleme besser zu erkennen. Lässt sich einfach zu den anderen Klassen packen und dann ausführen. Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht durch.
 
 ```java
