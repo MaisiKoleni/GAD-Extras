@@ -9,7 +9,7 @@ Das stellt für euch (von Seiten der ÜL) kein Problem dar:
 
 Entfernt die Tests/Testklassen bitte trotzdem vor der Abgabe, weil sonst die Tests auf TUM-judge nicht funktionieren.
 
-## Automatische Versionsüberprüfung (Version 1.2)
+## Automatische Versionsüberprüfung <span style="color:grey;font-size:large"> // Version 1.2</span>
 Testfälle zu veröffentlichen ist immer ein Risiko, da diese dazu führen können, dass Leute ihren Code verschlimmbessern, wenn die Tests fehlerhaft sind. Auch die Suche nach Fehlern kann frustrierend sein, unter anderem auch weil nicht alle möglichen Fehler von den Testklassen ausreichend behandelt werden. Doch das ist nichts, was sich nicht beheben ließe. Stetig werden die Tests verbessert und aktualisiert, Bugs werden gefixt.
 
 Das größte Problem:<br>
