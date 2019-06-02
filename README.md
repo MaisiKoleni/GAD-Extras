@@ -24,7 +24,7 @@ Für dieses Opt-In:
 
 _(das geht natürlich erst bei Tests ab Version 1.2 für `blatt02` und Version 1.6 für `blatt03`)_
 
-## Blatt02
+## [Blatt02](blatt02/)
 Testklasse für das Testen von higher/lower bei BinSea. Ausführbar über die main-Methode. Lässt sich einfach zu den anderen Klassen packen.
 Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht durch.
 
@@ -33,7 +33,7 @@ In dem Fall einfach die Testfälle, die mehrmals die 5 enthalten entfernen oder 
 
 **Notiz: Bitte nicht mehr Version 1.0 oder älter verwenden! (aktuell: 1.2)**
 
-## Blatt03
+## [Blatt03](blatt03/)
 Momentan gibt es erstmal nur eine Testklasse für DynamicArray (was aber auch am wichtigsten ist), DynamicStack, StackyQueue und RingQueue. Lässt sich einfach zu den anderen Klassen packen und dann ausführen. Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht durch.
 
 *Wichtig: es gibt auch noch weitere richtige Lösungen, die vielleicht nicht "optimal" sind. Meine Lösung geht davon aus, dass Elemente bei einer Größenänderung an den Arrayanfang geordnet werden und dass immer nur das nötigste kopiert wird (Kopieraufwand minimieren)*
@@ -42,7 +42,7 @@ Momentan gibt es erstmal nur eine Testklasse für DynamicArray (was aber auch am
 
 **Jetzt mit Tests zu DynamicStack, StackyQueue und RingQueue (ab Version 1.5)**
 
-## Blatt05
+## [Blatt05](blatt05/)
 Jetzt gibt es Tests zu Blatt 5 für die folgenden Klassen: DoubleHashInt, DoubleHashString, DoubleHashTable (sowohl mit Integer als auch String). Es gibt auch hilfreiche Diagramme in der Konsole, um die Qualität der Hashfunktionen zu bestimmen und Probleme besser zu erkennen. Lässt sich einfach zu den anderen Klassen packen und dann ausführen. Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht durch.
 
 **Notiz: noch nichts :D (aktuell: 1.0)**
