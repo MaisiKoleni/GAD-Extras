@@ -23,14 +23,16 @@ import java.util.stream.IntStream;
  * 
  * Bitte nicht mit abgeben. (geht sonst nicht)
  * 
- * @version 1.0
+ * @version 1.1
+ * 
+ * @since 1.1 fixed collision number test
  * 
  * @author Christian Femers (IN.TUM)
  *
  */
 public class DoubleHashTest {
 
-	private static final String VERSION = "1.0";
+	private static final String VERSION = "1.1";
 
 	private static Counter testNum = new Counter(0);
 	private static Counter testMethod = new Counter(0);
@@ -136,7 +138,7 @@ public class DoubleHashTest {
 		assertEquals(t.find(nextK), Optional.of("c"), nextK + " %s not in the table");
 
 		// T - check collisions
-		assertEquals(t.collisions(), 1);
+		assertEquals(t.collisions(), 2); // two elements not at optimal position
 	}
 
 	/**
@@ -230,7 +232,7 @@ public class DoubleHashTest {
 		assertEquals(t.find(nextK), Optional.of("c"), nextK + " %s not in the table");
 
 		// T - check collisions
-		assertEquals(t.collisions(), 1);
+		assertEquals(t.collisions(), 2); // two elements not at optimal position
 	}
 
 	private static <K> int invokeHash(DoubleHashTable<K, ?> table, K key, int i) {
