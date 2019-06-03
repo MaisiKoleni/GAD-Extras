@@ -110,7 +110,7 @@ public class DoubleHashTest {
 			k0 = tableHashes.get(0).get(0);
 			k1 = tableHashes.get(0).get(1);
 			nextK = tableHashes.get(invokeHash(t, k1, 1)).get(0);
-		} catch (@SuppressWarnings("unused") NullPointerException) {
+		} catch (@SuppressWarnings("unused") NullPointerException e) {
 			throw new IllegalStateException("hash distribution too bad");
 		}
 
@@ -136,7 +136,7 @@ public class DoubleHashTest {
 
 		// O, P - insert third
 		assertEquals(t.insert(nextK, "c"), true, nextK + " %s successfully inserted in table");
-		// P was too implementation dependant
+		getNextTestId(); // P was too implementation dependent
 
 		// Q, R, S - test contained
 		assertEquals(t.find(k0), Optional.of("a"), k0 + " %s in the table");
@@ -203,12 +203,12 @@ public class DoubleHashTest {
 			assertEquals(hashes.size(), 13);
 		}
 
-		Integer k0, k1, nextK;
+		String k0, k1, nextK;
 		try {
 			k0 = tableHashes.get(0).get(0);
 			k1 = tableHashes.get(0).get(1);
 			nextK = tableHashes.get(invokeHash(t, k1, 1)).get(0);
-		} catch (@SuppressWarnings("unused") NullPointerException) {
+		} catch (@SuppressWarnings("unused") NullPointerException e) {
 			throw new IllegalStateException("hash distribution too bad");
 		}
 
@@ -234,7 +234,7 @@ public class DoubleHashTest {
 
 		// O, P - insert third
 		assertEquals(t.insert(nextK, "c"), true, nextK + " %s successfully inserted in table");
-		// P was too implementation dependant
+		getNextTestId(); // P was too implementation dependent
 
 		// Q, R, S - test contained
 		assertEquals(t.find(k0), Optional.of("a"), k0 + " %s in the table");
