@@ -20,14 +20,16 @@ import java.util.TreeMap;
  * 
  * Bitte nicht mit abgeben. (geht sonst nicht)
  * 
- * @version 1.0
+ * @version 1.1
+ * 
+ * @since 1.1 fixed median calculation
  * 
  * @author Christian Femers (IN.TUM)
  *
  */
 public class HashStringTest {
 
-	private static final String VERSION = "1.0";
+	private static final String VERSION = "1.1";
 
 	private static Counter testNum = new Counter(0);
 	private static Counter testMethod = new Counter(0);
@@ -106,7 +108,9 @@ public class HashStringTest {
 	private static double getMedian(Collection<? extends Number> iCol) {
 		List<? extends Number> iList = new ArrayList<>(iCol);
 		Collections.sort(iList, (a, b) -> Double.compare(a.doubleValue(), b.doubleValue()));
-		return (iList.get(iList.size() / 2).doubleValue() + iList.get((iList.size() + 1) / 2).doubleValue()) / 2.0;
+		if (iList.size() % 2 == 0)
+			return (iList.get(iList.size() / 2).doubleValue() + iList.get(iList.size() / 2 - 1).doubleValue()) / 2.0;
+		return iList.get(iList.size() / 2).doubleValue();
 	}
 
 	private static void checkBounds(Collection<? extends Number> nums, long min, long max) {

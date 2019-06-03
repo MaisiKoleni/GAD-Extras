@@ -26,8 +26,7 @@ import java.util.stream.IntStream;
  * @version 1.2
  * 
  * @since 1.1 fixed collision number test
- * @since 1.2 fixed median calculation and robustness, 
- *        removed test 3.P and 6.P
+ * @since 1.2 fixed median calculation and robustness, removed test 3.P and 6.P
  * 
  * @author Christian Femers (IN.TUM)
  *
@@ -260,8 +259,7 @@ public class DoubleHashTest {
 		Collections.sort(iList, (a, b) -> Double.compare(a.doubleValue(), b.doubleValue()));
 		if (iList.size() % 2 == 0)
 			return (iList.get(iList.size() / 2).doubleValue() + iList.get(iList.size() / 2 - 1).doubleValue()) / 2.0;
-		else
-			return iList.get(iList.size() / 2).doubleValue();
+		return iList.get(iList.size() / 2).doubleValue();
 	}
 
 	private static void checkBounds(Collection<? extends Number> nums, long min, long max) {
