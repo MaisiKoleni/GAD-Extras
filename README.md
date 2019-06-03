@@ -42,7 +42,7 @@ Momentan gibt es erstmal nur eine Testklasse für `DynamicArray` (was aber auch 
 
 **Jetzt mit Tests zu DynamicStack, StackyQueue und RingQueue (ab Version 1.5)**
 
-## [Blatt04](blatt04/) <span style="color:grey;font-size:large"> // Version 1.0</span>
+## [Blatt04](blatt04/) <span style="color:grey;font-size:large"> // Version 1.1</span>
 Sehr ähnlich zu den Tests für Blatt 5 gibt es jetzt auch welche für Blatt 4, diese Testen nur grob das Verhalten der `hash(String)`-Methode der Klasse `HashString`, das beinhaltet die Prüfung des Wertebereichs (0 bis m-1), der Konsistenz (mehrmaliges ausführen resultiert in den selben Hashwerten) und der Verteilung, auch mit Diagrammen. Lässt sich einfach zu den anderen Klassen packen und dann ausführen. Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht durch.
 
 ```java
@@ -67,7 +67,9 @@ Test 2: TEST STRING HASH m == 17
    ⁰  ¹  ²  ³  ⁴  ⁵  ⁶  ⁷  ⁸  ⁹ ¹⁰ ¹¹ ¹² ¹³ ¹⁴ ¹⁵ ¹⁶
 ```
 
-## [Blatt05](blatt05/) <span style="color:grey;font-size:large"> // Version 1.1</span>
+**Bitte nicht mehr Version 1.0 oder älter verwenden!**
+
+## [Blatt05](blatt05/) <span style="color:grey;font-size:large"> // Version 1.2</span>
 Jetzt gibt es Tests zu Blatt 5 für die folgenden Klassen: `DoubleHashInt`, `DoubleHashString`, `DoubleHashTable` (sowohl mit Integer als auch String). Es gibt auch hilfreiche Diagramme in der Konsole, um die Qualität der Hashfunktionen zu bestimmen und Probleme besser zu erkennen. Lässt sich einfach zu den anderen Klassen packen und dann ausführen. Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht durch.
 
 ```java
@@ -92,4 +94,4 @@ Test 2: TEST INT HASH_TICK
    ⁰  ¹  ²  ³  ⁴  ⁵  ⁶  ⁷  ⁸  ⁹ ¹⁰ ¹¹ ¹² ¹³ ¹⁴ ¹⁵ ¹⁶
 ```
 
-**Bitte nicht mehr Version 1.0 oder älter verwenden!**
+**Bitte nicht mehr Version 1.1 oder älter verwenden!**
