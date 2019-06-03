@@ -23,16 +23,18 @@ import java.util.stream.IntStream;
  * 
  * Bitte nicht mit abgeben. (geht sonst nicht)
  * 
- * @version 1.1
+ * @version 1.2
  * 
  * @since 1.1 fixed collision number test
+ * @since 1.2 fixed median calculation and robustness, 
+ *        removed test 3.P and 6.P
  * 
  * @author Christian Femers (IN.TUM)
  *
  */
 public class DoubleHashTest {
 
-	private static final String VERSION = "1.1";
+	private static final String VERSION = "1.2";
 
 	private static Counter testNum = new Counter(0);
 	private static Counter testMethod = new Counter(0);
@@ -51,7 +53,7 @@ public class DoubleHashTest {
 	}
 
 	/**
-	 * Test int hashing
+	 * Test Integer hashing
 	 */
 	public static void testInt() {
 		int m = 17;
@@ -103,10 +105,14 @@ public class DoubleHashTest {
 			assertEquals(hashes.size(), 13);
 		}
 
-		Integer k0 = tableHashes.get(0).get(0);
-		Integer k1 = tableHashes.get(0).get(1);
-		Integer nextK = tableHashes.values().stream().flatMap(List::stream)
-				.filter(k -> invokeHash(t, k, 0) == invokeHash(t, k1, 1)).findAny().get();
+		Integer k0, k1, nextK;
+		try {
+			k0 = tableHashes.get(0).get(0);
+			k1 = tableHashes.get(0).get(1);
+			nextK = tableHashes.get(invokeHash(t, k1, 1)).get(0);
+		} catch (@SuppressWarnings("unused") NullPointerException) {
+			throw new IllegalStateException("hash distribution too bad");
+		}
 
 		// E - test empty
 		assertEquals(t.find(0), Optional.empty(), "0 %s not in the table");
@@ -130,7 +136,7 @@ public class DoubleHashTest {
 
 		// O, P - insert third
 		assertEquals(t.insert(nextK, "c"), true, nextK + " %s successfully inserted in table");
-		assertEquals(t.maxRehashes(), 1); // second entry using the same hash
+		// P was too implementation dependant
 
 		// Q, R, S - test contained
 		assertEquals(t.find(k0), Optional.of("a"), k0 + " %s in the table");
@@ -142,7 +148,7 @@ public class DoubleHashTest {
 	}
 
 	/**
-	 * Test int hashing
+	 * Test String hashing
 	 */
 	public static void testString() {
 		int m = 17;
@@ -197,10 +203,14 @@ public class DoubleHashTest {
 			assertEquals(hashes.size(), 13);
 		}
 
-		String k0 = tableHashes.get(0).get(0);
-		String k1 = tableHashes.get(0).get(1);
-		String nextK = tableHashes.values().stream().flatMap(List::stream)
-				.filter(k -> invokeHash(t, k, 0) == invokeHash(t, k1, 1)).findAny().get();
+		Integer k0, k1, nextK;
+		try {
+			k0 = tableHashes.get(0).get(0);
+			k1 = tableHashes.get(0).get(1);
+			nextK = tableHashes.get(invokeHash(t, k1, 1)).get(0);
+		} catch (@SuppressWarnings("unused") NullPointerException) {
+			throw new IllegalStateException("hash distribution too bad");
+		}
 
 		// E - test empty
 		assertEquals(t.find(""), Optional.empty(), "empty string %s not in the table");
@@ -224,7 +234,7 @@ public class DoubleHashTest {
 
 		// O, P - insert third
 		assertEquals(t.insert(nextK, "c"), true, nextK + " %s successfully inserted in table");
-		assertEquals(t.maxRehashes(), 1); // second entry using the same hash
+		// P was too implementation dependant
 
 		// Q, R, S - test contained
 		assertEquals(t.find(k0), Optional.of("a"), k0 + " %s in the table");
@@ -248,7 +258,10 @@ public class DoubleHashTest {
 	private static double getMedian(Collection<? extends Number> iCol) {
 		List<? extends Number> iList = new ArrayList<>(iCol);
 		Collections.sort(iList, (a, b) -> Double.compare(a.doubleValue(), b.doubleValue()));
-		return (iList.get(iList.size() / 2).doubleValue() + iList.get((iList.size() + 1) / 2).doubleValue()) / 2.0;
+		if (iList.size() % 2 == 0)
+			return (iList.get(iList.size() / 2).doubleValue() + iList.get(iList.size() / 2 - 1).doubleValue()) / 2.0;
+		else
+			return iList.get(iList.size() / 2).doubleValue();
 	}
 
 	private static void checkBounds(Collection<? extends Number> nums, long min, long max) {
