@@ -95,3 +95,6 @@ Test 2: TEST INT HASH_TICK
 ```
 
 **Bitte nicht mehr Version 1.1 oder älter verwenden!**
+
+## [Blatt06](blatt06/) <span style="color:grey;font-size:large"> // Version 1.0</span>
+Jetzt gibt es Tests zu Blatt 6 für die Klasse `RadixSort`. Lässt sich einfach zu den anderen Klassen packen und dann ausführen. Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht durch. Bitte beachten, dass die Tests nicht die Ausgabe der Konsole überprüfen, dafür bitte die Kommentare in der sort-Methode beachten.
