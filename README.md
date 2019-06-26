@@ -98,3 +98,8 @@ Test 2: TEST INT HASH_TICK
 
 ## [Blatt07](blatt07/) <span style="color:grey;font-size:large"> // Version 1.0</span>
 Jetzt gibt es Tests zu Blatt 7 für die Klasse `RadixSort`. Lässt sich einfach zu den anderen Klassen packen und dann ausführen. Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht durch. Bitte beachten, dass die Tests nicht die Ausgabe der Konsole überprüfen, dafür bitte die Kommentare in der sort-Methode beachten.
+
+## Blatt08 <span style="color:grey;font-size:large"> // Version 1.1 --- *Extern*</span>
+Dass ich Tests für Blatt 8 mache, ist unwahrscheinlich, ich denke der Post auf Piazza/Moodle hilft hier gut genug bei den wichtigsten auftretenden Problemen. 
+
+Es gibt jedoch Tests für Blatt 8 von Adrian Sohn unter **https://github.com/Ayedrian/gad-tests**. Diese lassen sich genauso wie die Tests hier benutzen, ihr müsst jedoch JUnit4 dem Projekt hinzufügen. (Das schlägt Eclipse automatisch vor.)
