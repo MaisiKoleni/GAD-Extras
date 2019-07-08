@@ -103,3 +103,6 @@ Jetzt gibt es Tests zu Blatt 7 für die Klasse `RadixSort`. Lässt sich einfach 
 Dass ich Tests für Blatt 8 mache, ist unwahrscheinlich, ich denke der Post auf Piazza/Moodle hilft hier gut genug bei den wichtigsten auftretenden Problemen. 
 
 Es gibt jedoch Tests für Blatt 8 von Adrian Sohn unter **https://github.com/Ayedrian/gad-tests**. Diese lassen sich genauso wie die Tests hier benutzen, ihr müsst jedoch JUnit4 dem Projekt hinzufügen. (Das schlägt Eclipse automatisch vor.)
+
+## [Blatt10](blatt10/) <span style="color:grey;font-size:large"> // Version 1.0</span>
+Jetzt gibt es Tests zu Blatt 10, momentan jedoch nur für die nicht-strukturverändernden Methoden der Klasse `ABTreeInnerNode`. Die Tests sind somit noch *unvollständig* und werden noch erweitert. Lässt sich einfach zu den anderen Klassen packen und dann ausführen. Vor der Abgabe entfernen bzw. nicht mit abgeben, die Tests laufen sonst nicht durch.
